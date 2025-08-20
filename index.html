@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagane World - Hand Painted Clothing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #111;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pagane World</h1>
+    <nav>
+      <a href="#about">За нас</a>
+      <a href="#gallery">Галерия</a>
+      <a href="#contact">Контакт</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>За нас</h2>
+    <p>Уникални ръчно рисувани дрехи с езически дух и съвременно изкуство.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Нашите творби</h2>
+    <div class="gallery">
+      <img src="https://placehold.co/400x400?text=T-shirt+1" alt="T-shirt 1">
+      <img src="https://placehold.co/400x400?text=T-shirt+2" alt="T-shirt 2">
+      <img src="https://placehold.co/400x400?text=T-shirt+3" alt="T-shirt 3">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Контакт</h2>
+    <p>📩 Email: paganeworld@example.com</p>
+    <p>📱 Instagram: @paganeworld</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Pagane World. Всички права запазени.</p>
+  </footer>
+</body>
+</html>
