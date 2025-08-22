@@ -3,88 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagane World - Hand Painted Clothing</title>
+  <title>Pagane Painting</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #fdfdfd;
-      color: #222;
-      text-align: center;
+      margin: 0; padding: 0;
+      background: #111; color: #eee;
     }
     header {
-      background: #111;
-      color: white;
-      padding: 1.5rem;
+      background: #000; color: #fff;
+      padding: 20px; text-align: center;
+      border-bottom: 2px solid #28a745;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
+    h1 { margin: 0; font-size: 32px; }
+    h2 { margin: 20px 0 10px; text-align: center; color: #28a745; }
+
+    main { padding: 20px; max-width: 900px; margin: auto; }
+
+    section { margin-bottom: 50px; }
+
+    /* --- За мен --- */
+    #about p {
+      text-align: center; line-height: 1.6;
+      font-style: italic; max-width: 700px; margin: 0 auto;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
+
+    /* --- Slider --- */
+    .slider {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto 10px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.5);
     }
-    section {
-      padding: 2rem;
+    .slides img { width: 100%; display: none; }
+    .slides img.active { display: block; }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      border: 0; background: rgba(0,0,0,.6);
+      color: #fff; padding: 10px 12px;
+      border-radius: 50%; cursor: pointer;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .desc { text-align: center; margin: 8px 0; font-size: 14px; }
+    .price { text-align: center; margin: 10px 0 0; }
+    .buy-btn {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 18px;
+      background: #28a745;
+      color: #fff; text-decoration: none;
+      border-radius: 10px; font-weight: 700;
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
+    .buy-btn:hover { filter: brightness(0.95); }
+
     footer {
-      background: #111;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
+      margin-top: 40px; padding: 20px;
+      background: #000; color: #fff;
+      text-align: center; font-size: 14px;
+      border-top: 2px solid #28a745;
     }
+    footer a { color: #28a745; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Pagane World</h1>
-    <nav>
-      <a href="#about">За нас</a>
-      <a href="#gallery">Галерия</a>
-      <a href="#contact">Контакт</a>
-    </nav>
+    <h1>Pagane Painting</h1>
+    <p>Ръчно рисувани тениски с магия</p>
   </header>
 
-  <section id="about">
-    <h2>За нас</h2>
-    <p>Уникални ръчно рисувани дрехи с езически дух и съвременно изкуство.</p>
-  </section>
+  <main>
+    <!-- За мен -->
+    <section id="about">
+      <h2>За мен</h2>
+      <p>
+        Понякога ни е тъмно, понякога страшно и това е живота. Между черното и бялото се преплитат сиви нишки, ако имаш очи да видиш.<br><br>
+        Всяка дреха е ръчно рисувана с определена цел – за защита, за просперитет, за отваряне на нови пътища. Нека не забравяме, че магията е на мода, а модата носи магията да изразяваме себе си.<br><br>
+        Дрехите идват при вас, ако сте готови. Всяка кутия има послание и щипка магия.
+      </p>
+    </section>
 
-  <section id="gallery">
-  <h2>Нашите творби</h2>
-  <div class="gallery">
-    <img src="images/Hekate1.jpg" alt="Hekate тениска - изглед 1">
-    <img src="images/Hekate2.jpg" alt="Hekate тениска - изглед 2">
-    <img src="images/Hekate3.jpg" alt="Hekate тениска - изглед 3">
-  </div>
-  </section>
-      <img src="https://placehold.co/400x400?text=T-shirt+2" alt="T-shirt 2">
-      <img src="https://placehold.co/400x400?text=T-shirt+3" alt="T-shirt 3">
-    </div>
-  </section>
+    <!-- Hekate -->
+    <section id="hekate-shirt">
+      <h2>Тениска "Hekate"</h2>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/Hekate1.jpg" alt="Hekate – изглед 1">
+          <img src="images/Hekate2.jpg" alt="Hekate – изглед 2">
+          <img src="images/Hekate3.jpg" alt="Hekate – изглед 3">
+          <img src="images/Hekate4.jpg" alt="Hekate – изглед 4">
+        </div>
+        <button class="prev" onclick="moveSlide('hekate', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('hekate', 1)">&#10095;</button>
+      </div>
+      <div class="desc">Черна тениска с ръчно рисувана богиня Хеката</div>
+      <div class="price">
+        <p>Цена: <strong>45 лв.</strong></p>
+        <a class="buy-btn"
+           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Hekate&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Hekate.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
+          Купи – 45 лв.
+        </a>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Контакт</h2>
-    <p>📩 Email: paganeworld@example.com</p>
-    <p>📱 Instagram: @paganeworld</p>
-  </section>
+    <!-- Vratia -->
+    <section id="vratia-shirt">
+      <h2>Тениска "Vratia"</h2>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/Vratia1.jpg" alt="Vratia – изглед 1">
+          <img src="images/Vratia2.jpg" alt="Vratia – изглед 2">
+          <img src="images/Vratia3.jpg" alt="Vratia – изглед 3">
+        </div>
+        <button class="prev" onclick="moveSlide('vratia', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('vratia', 1)">&#10095;</button>
+      </div>
+      <div class="desc">Бяла тениска с врата между светове</div>
+      <div class="price">
+        <p>Цена: <strong>40 лв.</strong></p>
+        <a class="buy-btn"
+           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Vratia&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Vratia.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
+          Купи – 40 лв.
+        </a>
+      </div>
+    </section>
+
+    <!-- Tree of Life -->
+    <section id="tree-shirt">
+      <h2>Тениска "Tree of Life"</h2>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/Treeoflife1.jpg" alt="Tree of Life – изглед 1">
+          <img src="images/Treeoflife2.jpg" alt="Tree of Life – изглед 2">
+        </div>
+        <button class="prev" onclick="moveSlide('tree', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('tree', 1)">&#10095;</button>
+      </div>
+      <div class="desc">Тениска с ръчно рисувано дърво на живота</div>
+      <div class="price">
+        <p>Цена: <strong>42 лв.</strong></p>
+        <a class="buy-btn"
+           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Tree of Life&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Tree%20of%20Life.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
+          Купи – 42 лв.
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Pagane World. Всички права запазени.</p>
+    <p>
+      TikTok: <a href="https://www.tiktok.com/@pagane.world" target="_blank">@pagane.world</a><br>
+      Телефон: <a href="tel:+359895020680">+359 895 02 06 80</a><br>
+      Имейл: <a href="mailto:pagane.world.of.words@gmail.com">pagane.world.of.words@gmail.com</a>
+    </p>
+    <p>&copy; 2025 Pagane Painting</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sliders = {
+        'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
+        'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
+        'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+      };
+
+      function show(name, i) {
+        sliders[name].images.forEach((img, idx) =>
+          img.classList.toggle('active', idx === i)
+        );
+      }
+
+      window.moveSlide = function (name, step) {
+        const s = sliders[name];
+        s.current = (s.current + step + s.images.length) % s.images.length;
+        show(name, s.current);
+      };
+
+      // старт със снимка 0
+      for (let key in sliders) show(key, sliders[key].current);
+    });
+  </script>
 </body>
 </html>
