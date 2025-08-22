@@ -164,7 +164,21 @@
       Имейл: <a href="mailto:pagane.world.of.words@gmail.com">pagane.world.of.words@gmail.com</a>
     </p>
     <p>&copy; 2025 Pagane Painting</p>
+    
   </footer>
+  
+  <section id="comments">
+  <h2>Оставете запитване</h2>
+  <form action="mailto:pagane.world.of.words@gmail.com" method="POST" enctype="text/plain">
+    <label for="name">Име:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="message">Съобщение:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+    <button type="submit">Изпрати</button>
+  </form>
+  </section>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
