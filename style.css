@@ -1,58 +1,52 @@
-/* === Основен стил === */
+/* Общ стил – черно/бяло/сиво */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #eee;
   margin: 0;
   padding: 0;
-  background-color: #111;   /* черно */
-  color: #eee;              /* почти бяло */
   line-height: 1.6;
 }
 
-/* === Заглавна част === */
 header {
   text-align: center;
-  padding: 2rem 1rem;
-  background: #000;
-  color: #fff;
+  padding: 2rem;
+  background-color: #000;
 }
 
 header h1 {
-  font-size: 2.2rem;
-  margin: 0;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.1rem;
-  color: #aaa; /* сиво */
+  color: #aaa;
 }
 
-/* === Секции === */
+/* Секции */
 section {
-  padding: 2rem 1rem;
+  padding: 2rem;
   border-bottom: 1px solid #333;
 }
 
-h2 {
-  color: #fff;
+section h2 {
+  text-align: center;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
-.desc {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #ccc;
-}
-
-/* === Слайдери === */
+/* Слайдер */
 .slider {
   position: relative;
-  max-width: 450px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .slides img {
-  width: 100%;
   display: none;
+  width: 100%;
   border-radius: 8px;
 }
 
@@ -61,177 +55,129 @@ h2 {
 }
 
 .prev, .next {
-  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 8px;
+  background: rgba(255,255,255,0.2);
   color: #fff;
-  background: rgba(50, 50, 50, 0.7);
   border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-}
-
-.prev { left: 5px; }
-.next { right: 5px; }
-
-/* === Цена и бутон Купи === */
-.price {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.buy-btn {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 10px 16px;
-  background: #444; /* сиво */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.buy-btn:hover {
-  background: #666;
-}
-
-/* === Форма за запитване === */
-#comments form {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 6px 0;
-  border: 1px solid #444;
-  border-radius: 6px;
-  background: #222;
-  color: #eee;
-}
-
-textarea {
-  resize: vertical;
-}
-
-button {
-  background: #444;
-  color: #fff;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
+  font-size: 2rem;
+  padding: 0.3rem 0.6rem;
   cursor: pointer;
-  transition: 0.3s;
+  border-radius: 50%;
 }
 
-button:hover {
-  background: #666;
+.prev:hover, .next:hover {
+  background: rgba(255,255,255,0.5);
 }
 
-/* === Footer === */
-footer {
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Описание и цена */
+.desc {
   text-align: center;
-  padding: 1.5rem;
-  background: #000;
-  color: #777;
-}
-
-footer a {
-  color: #aaa;
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-footer a:hover {
-  color: #fff;
-}
-/* --- Header --- */
-.header-content {
-  display: flex;
-  justify-content: center; /* центрира целия блок */
-  align-items: center;
-  gap: 15px; /* разстояние между текста и логото */
-}
-
-.header-content h1 {
-  margin: 0;
-  font-size: 32px;
-  text-align: center;
-}
-
-/* Подзаглавието */
-header p {
-  text-align: center;
-  margin-top: 8px;
+  margin: 1rem 0;
   font-style: italic;
   color: #ccc;
 }
 
-/* --- Footer линкове --- */
-footer a {
-  color: #bbb;
-  transition: color 0.3s ease;
-}
-footer a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* --- Запитвания --- */
-#comments {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.6);
-}
-
-#comments h2 {
+.price {
   text-align: center;
-  margin-bottom: 15px;
-  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #8B008B; /* тъмна маджента */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #a020a0;
+}
+
+/* Форма за запитвания */
+#comments {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#comments form {
+  display: flex;
+  flex-direction: column;
 }
 
 #comments label {
-  font-size: 14px;
-  color: #aaa;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+  color: #ccc;
 }
 
 #comments input,
 #comments textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  background: #2b2b2b;
-  border: 1px solid #444;
-  border-radius: 6px;
-  color: #eee;
-}
-
-#comments input:focus,
-#comments textarea:focus {
-  outline: none;
-  border-color: #666;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  resize: none;
 }
 
 #comments button {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  background: #555;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #8B008B;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
 }
 
 #comments button:hover {
-  background: #777;
+  background: #a020a0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #000;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+footer a {
+  color: #8B008B;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- Архив --- */
+#archive {
+  opacity: 0.6; /* да личи, че са минали модели */
+}
+
+#archive h2 {
+  color: #ccc;
+}
+
+#archive img.sold {
+  filter: grayscale(100%);
+}
+
+#archive .desc {
+  font-style: italic;
+  color: #aaa;
 }
