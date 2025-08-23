@@ -162,11 +162,6 @@ footer a:hover {
   text-align: center;
 }
 
-.logo {
-  height: 12px; /* настрой според размера на логото */
-  width: 12px;
-}
-
 /* Подзаглавието */
 header p {
   text-align: center;
