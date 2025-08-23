@@ -18,8 +18,7 @@
       <h2>За мен</h2>
       <p>
         Между черното и бялото се преплитат сиви нишки.<br><br>
-        Всяка дреха е ръчно рисувана с определена цел – за защита, за просперитет, за отваряне на нови пътища. 
-        Нека не забравяме, че магията е на мода, а модата носи магията да изразяваме себе си.<br><br>
+        Всяка дреха е ръчно рисувана с определена цел – за защита, за просперитет, за отваряне на нови пътища. Нека не забравяме, че магията е на мода, а модата носи магията да изразяваме себе си.<br><br>
         Дрехите идват при вас, ако сте готови. Всяка кутия има послание и щипка магия.
       </p>
     </section>
@@ -90,6 +89,20 @@
         </a>
       </div>
     </section>
+
+    <!-- Запитване -->
+    <section id="comments">
+      <h2>Оставете запитване</h2>
+      <form action="mailto:pagane.world.of.words@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Име:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="message">Съобщение:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button type="submit">Изпрати</button>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -103,29 +116,33 @@
     <p>
       <a href="terms.html">Общи условия</a> | 
       <a href="privacy.html">Политика за лични данни</a> | 
-      <a href="delivery.html">Условия за доставка</a>
+      <a href="delivery.html">Условия за доставка</a> | 
+      <a href="archive.html">Архив</a>
     </p>
   </footer>
 
-  <!-- Popup бутон и форма -->
-  <button id="openFormBtn" class="floating-btn">Оставете запитване</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sliders = {
+        'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
+        'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
+        'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+      };
 
-  <div id="modalForm" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Оставете запитване</h2>
-      <form action="mailto:pagane.world.of.words@gmail.com" method="POST" enctype="text/plain">
-        <label for="name">Име:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+      function show(name, i) {
+        sliders[name].images.forEach((img, idx) =>
+          img.classList.toggle('active', idx === i)
+        );
+      }
 
-        <label for="message">Съобщение:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+      window.moveSlide = function (name, step) {
+        const s = sliders[name];
+        s.current = (s.current + step + s.images.length) % s.images.length;
+        show(name, s.current);
+      };
 
-        <button type="submit">Изпрати</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+      for (let key in sliders) show(key, sliders[key].current);
+    });
+  </script>
 </body>
 </html>
