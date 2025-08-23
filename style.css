@@ -179,3 +179,59 @@ footer a:hover {
   color: #fff;
   text-decoration: underline;
 }
+
+/* --- Запитвания --- */
+#comments {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
+#comments h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+#comments label {
+  font-size: 14px;
+  color: #aaa;
+}
+
+#comments input,
+#comments textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  background: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #eee;
+}
+
+#comments input:focus,
+#comments textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+#comments button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #555;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#comments button:hover {
+  background: #777;
+}
