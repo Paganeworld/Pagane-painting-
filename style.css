@@ -148,3 +148,39 @@ footer a {
 footer a:hover {
   color: #fff;
 }
+/* --- Header --- */
+.header-content {
+  display: flex;
+  justify-content: center; /* центрира целия блок */
+  align-items: center;
+  gap: 15px; /* разстояние между текста и логото */
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+}
+
+.logo {
+  height: 60px; /* настрой според размера на логото */
+  width: auto;
+}
+
+/* Подзаглавието */
+header p {
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* --- Footer линкове --- */
+footer a {
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
