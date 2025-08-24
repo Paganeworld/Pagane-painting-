@@ -160,3 +160,27 @@ footer a:hover {
   font-style: italic;
   color: #aaa;
 }
+
+/* бутон в нормално състояние */
+#contactBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 22px;
+  background: #444;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+#contactBtn:hover {
+  background: #666;
+}
+
+/* при докосване на футъра */
+body.scrolled-to-footer #contactBtn {
+  bottom: 100px !important; /* повдига бутона над футъра */
+}
