@@ -91,18 +91,7 @@
     </section>
 
     <!-- Запитване -->
-    <section id="comments">
-      <h2>Оставете запитване</h2>
-      <form action="mailto:pagane.world.of.words@gmail.com" method="POST" enctype="text/plain">
-        <label for="name">Име:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="message">Съобщение:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit">Изпрати</button>
-      </form>
-    </section>
+    <button id="contactBtn">Запитване</button>
   </main>
 
   <footer>
@@ -143,6 +132,25 @@
 
       for (let key in sliders) show(key, sliders[key].current);
     });
+  </script>
+
+  <script>
+  const btn = document.getElementById('contactBtn');
+  const footer = document.querySelector('footer');
+
+  window.addEventListener('scroll', () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    if (footerTop < window.innerHeight) {
+      document.body.classList.add('scrolled-to-footer');
+    } else {
+      document.body.classList.remove('scrolled-to-footer');
+    }
+  });
+
+  // Когато натиснеш бутона – отваря имейл за запитване
+  btn.addEventListener('click', () => {
+    window.location.href = "mailto:pagane.world.of.words@gmail.com?subject=Запитване&body=Здравейте,%0AИскам%20повече%20информация%20за...";
+  });
   </script>
 </body>
 </html>
