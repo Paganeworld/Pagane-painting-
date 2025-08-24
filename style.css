@@ -199,10 +199,10 @@ footer a:hover {
 
 /* при докосване на футъра */
 body.scrolled-to-footer #contactBtn {
-  bottom: 100px !important; /* повдига бутона над футъра */
+  bottom: 150px !important; /* повдига бутона над футъра */
 }
 
 /* ако е добавен клас scrolled-to-footer */
 body.scrolled-to-footer #contactBtn {
-  bottom: 120px !important; /* повдигнат над футъра */
+  bottom: 180px !important; /* повдигнат над футъра */
 }
