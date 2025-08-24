@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const footerRect = footer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (footerRect.top < windowHeight) {
+    if (footerRect.top < windowHeight 180) {
       document.body.classList.add("scrolled-to-footer");
     } else {
       document.body.classList.remove("scrolled-to-footer");
