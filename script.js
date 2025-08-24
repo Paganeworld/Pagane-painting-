@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // --- Слайдери ---
   const sliders = {
     'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
     'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
@@ -19,12 +20,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let key in sliders) show(key, sliders[key].current);
 
-  // Popup форма
+  // --- Popup форма ---
   const modal = document.getElementById("modalForm");
   const btn   = document.getElementById("openFormBtn");
   const span  = document.querySelector(".close");
 
-  btn.onclick  = () => modal.style.display = "block";
-  span.onclick = () => modal.style.display = "none";
-  window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+  if (btn) {
+    btn.onclick  = () => modal.style.display = "block";
+  }
+  if (span) {
+    span.onclick = () => modal.style.display = "none";
+  }
+  window.onclick = (e) => {
+    if (e.target == modal) modal.style.display = "none";
+  };
+
+  // --- Логика за бутона "Запитване" да се вдига над футъра ---
+  document.addEventListener("scroll", function () {
+    const footer = document.querySelector("footer");
+    const contactBtn = document.getElementById("contactBtn");
+
+    if (!footer || !contactBtn) return;
+
+    const footerRect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (footerRect.top < windowHeight) {
+      document.body.classList.add("scrolled-to-footer");
+    } else {
+      document.body.classList.remove("scrolled-to-footer");
+    }
+  });
 });
