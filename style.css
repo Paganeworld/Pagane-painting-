@@ -101,49 +101,28 @@ section h2 {
   background: #a020a0;
 }
 
-/* Форма за запитвания */
-#comments {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #1a1a1a;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-#comments form {
-  display: flex;
-  flex-direction: column;
-}
-
-#comments label {
-  margin: 0.5rem 0 0.2rem;
-  font-weight: bold;
-  color: #ccc;
-}
-
-#comments input,
-#comments textarea {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  background: #333;
+/* --- Бутон за запитване --- */
+#contactBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 22px;
+  background: #444;
   color: #fff;
-  resize: none;
-}
-
-#comments button {
-  margin-top: 1rem;
-  padding: 0.7rem;
-  background: #8B008B;
-  color: #fff;
+  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+#contactBtn:hover {
+  background: #666;
 }
 
-#comments button:hover {
-  background: #a020a0;
+/* Когато се застъпва с footer-а */
+body.scrolled-to-footer #contactBtn {
+  bottom: 80px; /* повдига го над футъра */
 }
 
 /* Footer */
