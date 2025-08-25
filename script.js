@@ -25,30 +25,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const btn   = document.getElementById("openFormBtn");
   const span  = document.querySelector(".close");
 
-  if (btn) {
+  if (btn && modal && span) {
     btn.onclick  = () => modal.style.display = "block";
-  }
-  if (span) {
     span.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
   }
-  window.onclick = (e) => {
-    if (e.target == modal) modal.style.display = "none";
-  };
 
-  // --- Логика за бутона "Запитване" да се вдига над футъра ---
-  document.addEventListener("scroll", function () {
-    const footer = document.querySelector("footer");
-    const contactBtn = document.getElementById("contactBtn");
+  // --- Lightbox за снимки ---
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeLightbox = document.querySelector(".lightbox .close");
 
-    if (!footer || !contactBtn) return;
+  if (lightbox && lightboxImg && closeLightbox) {
+    document.querySelectorAll(".slides img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+      });
+    });
 
-    const footerRect = footer.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+    closeLightbox.onclick = () => {
+      lightbox.style.display = "none";
+      lightbox.classList.remove("show");
+    };
 
-    if (footerRect.top < windowHeight 220) {
-      document.body.classList.add("scrolled-to-footer");
-    } else {
-      document.body.classList.remove("scrolled-to-footer");
-    }
-  });
+    lightbox.onclick = (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightbox.classList.remove("show");
+      }
+    };
+  }
 });
