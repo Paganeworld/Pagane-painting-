@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const sliders = {
     'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
     'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-    'tree':   { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+    'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
   };
 
   function show(name, i) {
@@ -20,41 +20,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let key in sliders) show(key, sliders[key].current);
 
-  // --- Popup форма ---
-  const modal = document.getElementById("modalForm");
-  const btn   = document.getElementById("openFormBtn");
-  const span  = document.querySelector(".close");
+  // --- Бутон за запитване ---
+  const btn = document.getElementById('contactBtn');
+  const footer = document.querySelector('footer');
 
-  if (btn && modal && span) {
-    btn.onclick  = () => modal.style.display = "block";
-    span.onclick = () => modal.style.display = "none";
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
-  }
+  window.addEventListener('scroll', () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    if (footerTop < window.innerHeight) {
+      document.body.classList.add('scrolled-to-footer');
+    } else {
+      document.body.classList.remove('scrolled-to-footer');
+    }
+  });
 
-  // --- Lightbox за снимки ---
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeLightbox = document.querySelector(".lightbox .close");
+  btn.addEventListener('click', () => {
+    window.location.href = "mailto:pagane.world.of.words@gmail.com?subject=Запитване&body=Здравейте,%0AИскам%20повече%20информация%20за...";
+  });
 
-  if (lightbox && lightboxImg && closeLightbox) {
-    document.querySelectorAll(".slides img").forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightbox.classList.add("show");
-        lightboxImg.src = img.src;
-      });
+  // --- Lightbox със zoom ---
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox .close');
+
+  // Отваряне при клик на снимка
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('show');
+      lightboxImg.src = img.src;
+      lightboxImg.classList.remove('zoomed');
     });
+  });
 
-    closeLightbox.onclick = () => {
-      lightbox.style.display = "none";
-      lightbox.classList.remove("show");
-    };
+  // Затваряне с X
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('show');
+  });
 
-    lightbox.onclick = (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightbox.classList.remove("show");
-      }
-    };
-  }
+  // Затваряне при клик извън снимката
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('show');
+    }
+  });
+
+  // Zoom при клик върху снимката
+  lightboxImg.addEventListener('click', () => {
+    lightboxImg.classList.toggle('zoomed');
+  });
+
+  // Затваряне с Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('show');
+    }
+  });
 });
