@@ -70,7 +70,7 @@
 
     <!-- Tree of Life -->
     <section id="tree-shirt">
-      <h2>Тениска "Tree of Life1"</h2>
+      <h2>Тениска "Tree of Life"</h2>
       <div class="slider">
         <div class="slides">
           <img src="images/Treeoflife1.jpg" alt="Tree of Life – изглед 1">
@@ -103,60 +103,89 @@
     <p>&copy; 2025 Pagane Painting</p>
 
     <p>
-  <a href="terms.html">Общи условия</a> | 
-  <a href="privacy.html">Политика за лични данни</a> | 
-  <a href="delivery.html">Условия за доставка</a> | 
-  <a href="archive.html">Архив</a>
+      <a href="terms.html">Общи условия</a> | 
+      <a href="privacy.html">Политика за лични данни</a> | 
+      <a href="delivery.html">Условия за доставка</a> | 
+      <a href="archive.html">Архив</a>
     </p>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sliders = {
-        'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
-        'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-        'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
-      };
-
-      function show(name, i) {
-        sliders[name].images.forEach((img, idx) =>
-          img.classList.toggle('active', idx === i)
-        );
-      }
-
-      window.moveSlide = function (name, step) {
-        const s = sliders[name];
-        s.current = (s.current + step + s.images.length) % s.images.length;
-        show(name, s.current);
-      };
-
-      for (let key in sliders) show(key, sliders[key].current);
-    });
-  </script>
-
-  <script>
-  const btn = document.getElementById('contactBtn');
-  const footer = document.querySelector('footer');
-
-  window.addEventListener('scroll', () => {
-    const footerTop = footer.getBoundingClientRect().top;
-    if (footerTop < window.innerHeight) {
-      document.body.classList.add('scrolled-to-footer');
-    } else {
-      document.body.classList.remove('scrolled-to-footer');
-    }
-  });
-
-  // Когато натиснеш бутона – отваря имейл за запитване
-  btn.addEventListener('click', () => {
-    window.location.href = "mailto:pagane.world.of.words@gmail.com?subject=Запитване&body=Здравейте,%0AИскам%20повече%20информация%20за...";
-  });
-  </script>
-
   <!-- Lightbox за увеличаване на снимки -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-</div> 
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div> 
+
+  <!-- Скриптове -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Слайдер
+    const sliders = {
+      'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
+      'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
+      'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+    };
+
+    function show(name, i) {
+      sliders[name].images.forEach((img, idx) =>
+        img.classList.toggle('active', idx === i)
+      );
+    }
+
+    window.moveSlide = function (name, step) {
+      const s = sliders[name];
+      s.current = (s.current + step + s.images.length) % s.images.length;
+      show(name, s.current);
+    };
+
+    for (let key in sliders) show(key, sliders[key].current);
+
+    // Запитване
+    const btn = document.getElementById('contactBtn');
+    const footer = document.querySelector('footer');
+
+    window.addEventListener('scroll', () => {
+      const footerTop = footer.getBoundingClientRect().top;
+      if (footerTop < window.innerHeight) {
+        document.body.classList.add('scrolled-to-footer');
+      } else {
+        document.body.classList.remove('scrolled-to-footer');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      window.location.href = "mailto:pagane.world.of.words@gmail.com?subject=Запитване&body=Здравейте,%0AИскам%20повече%20информация%20за...";
+    });
+
+    // Lightbox със zoom
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    document.addEventListener("click", (e) => {
+      if (e.target.matches(".slides img")) {
+        lightbox.classList.add("show");
+        lightboxImg.src = e.target.src;
+        lightboxImg.classList.remove("zoomed");
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.classList.remove("show");
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") lightbox.classList.remove("show");
+    });
+
+    lightboxImg.addEventListener("click", () => {
+      lightboxImg.classList.toggle("zoomed");
+    });
+  });
+  </script>
 </body>
 </html>
