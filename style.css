@@ -206,3 +206,13 @@ body.scrolled-to-footer #contactBtn {
 body.scrolled-to-footer #contactBtn {
   bottom: 220px !important; /* повдигнат над футъра */
 }
+
+/* Zoom ефект върху снимките */
+.slides img {
+  transition: transform 0.3s ease; /* плавност */
+  cursor: zoom-in; /* показва лупа */
+}
+
+.slides img:hover {
+  transform: scale(1.2); /* увеличаване 20% */
+}
