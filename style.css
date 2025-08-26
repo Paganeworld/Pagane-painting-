@@ -193,3 +193,35 @@ footer a:hover {
 body.scrolled-to-footer #contactBtn {
   display: none;
 }
+/* Черен фон на целия сайт */
+body {
+  background-color: #000;
+  color: #fff; /* текстът става бял, за да се вижда */
+}
+
+/* Бутони Купи */
+.buy-btn {
+  background-color: #2a001f; /* много тъмна маджента */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: #4a0038; /* малко по-светла маджента при hover */
+}
+
+/* Линкове */
+a {
+  color: #b30086; /* тъмно маджента */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff33cc; /* по-ярка маджента при hover */
+  text-decoration: underline;
+}
