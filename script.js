@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const sliders = {
     'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
     'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-    'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+    'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') },
+    'shield': { current: 0, images: document.querySelectorAll('#shield-shirt .slides img') }
   };
 
   function show(name, i) {
