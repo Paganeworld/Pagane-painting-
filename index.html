@@ -99,14 +99,14 @@
           <img src="images/Shield2.jpg" alt="Shield – изглед 2">
           <img src="images/Shield3.jpg" alt="Shield – изглед 3">
         </div>
-        <button class="prev" onclick="moveSlide('hekate', -1)">&#10094;</button>
-        <button class="next" onclick="moveSlide('hekate', 1)">&#10095;</button>
+        <button class="prev" onclick="moveSlide('shield', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('shield', 1)">&#10095;</button>
       </div>
       <div class="desc">Тениска с ръчно рисуван „Викинг щит”. Размер М, мъжка </div>
       <div class="price">
         <p> <strong> 100% памук </strong></p>
         <a class="buy-btn"
-           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Hekate&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Hekate.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
+           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Shield&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Hekate.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
           Купи – 100 лв.
         </a>
       </div>
@@ -145,7 +145,8 @@
     const sliders = {
       'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
       'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-      'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') }
+      'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') },
+      'shield': { current: 0, images: document.querySelectorAll('#shield-shirt .slides img') }
     };
 
     function show(name, i) {
