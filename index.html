@@ -6,232 +6,119 @@
   <title>Pagane Painting</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <h1>Pagane Painting</h1>
-    <p>Ръчно рисувани тениски с магия</p>
+    <h1>PAGANE PAINTING</h1>
+    <p>Рисувани тениски</p>
   </header>
 
   <main>
-    <!-- За мен -->
-    <section id="about">
-      <h2>За мен</h2>
-      <p>
-        Между черното и бялото се преплитат сиви нишки.<br><br>
-        Всяка дреха е ръчно рисувана с определена цел – за защита, за просперитет, за отваряне на нови пътища. Нека не забравяме, че магията е на мода, а модата носи магията да изразяваме себе си.<br><br>
-        Дрехите идват при вас, ако сте готови. Всяка кутия има послание и щипка магия.
-      </p>
-    </section>
 
-    <!-- Odin -->
-<section id="odin-shirt">
-  <h2>Тениска "Odin"</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="images/odin.jpeg" alt="Odin – изглед 1">
-      <img src="images/odin1.jpeg" alt="Odin – изглед 2">
+    <!-- МЪЖКИ -->
+    <h2 class="category-title">Мъжки</h2>
+
+    <!-- ODIN -->
+    <div class="product" id="odin-shirt">
+      <h3>Odin</h3>
+      <div class="slider">
+        <div class="slides">
+          <img src="odin.jpeg" class="active">
+          <img src="odin1.jpeg">
+        </div>
+        <button class="prev" onclick="moveSlide('odin', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('odin', 1)">&#10095;</button>
+      </div>
+      <p class="fabric">100% памук</p>
+      <button class="buy-btn" id="openFormBtn">Купи</button>
     </div>
-    <button class="prev" onclick="moveSlide('odin', -1)">&#10094;</button>
-    <button class="next" onclick="moveSlide('odin', 1)">&#10095;</button>
-  </div>
 
-  <div class="desc">Тениска с ръчно рисуван „Один”. Размер М, мъжка.</div>
-
-  <div class="price">
-    <p><strong>100% памук</strong></p>
-    <a class="buy-btn"
-       href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Odin&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Odin.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
-      Купи – 100 лв.
-    </a>
-  </div>
-</section>
-
-    <!-- Hekate -->
-    <section id="hekate-shirt">
-      <h2>Тениска "Hekate"</h2>
+    <!-- SHIELD -->
+    <div class="product" id="shield-shirt">
+      <h3>Shield</h3>
       <div class="slider">
         <div class="slides">
-          <img src="images/Hekate1.jpg" alt="Hekate – изглед 1">
-          <img src="images/Hekate2.jpg" alt="Hekate – изглед 2">
-          <img src="images/Hekate3.jpg" alt="Hekate – изглед 3">
-          <img src="images/Hekate4.jpg" alt="Hekate – изглед 4">
-        </div>
-        <button class="prev" onclick="moveSlide('hekate', -1)">&#10094;</button>
-        <button class="next" onclick="moveSlide('hekate', 1)">&#10095;</button>
-      </div>
-      <div class="desc">Тениска с ръчно рисувана богиня Хеката. Размер XS, дамска</div>
-      <div class="price">
-        <p> <strong> 100% памук </strong></p>
-        <a class="buy-btn"
-           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Hekate&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Hekate.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
-          Купи – 95 лв.
-        </a>
-      </div>
-    </section>
-
-    <!-- Vratia -->
-    <section id="vratia-shirt">
-      <h2>Тениска "Vratia"</h2>
-      <div class="slider">
-        <div class="slides">
-          <img src="images/Vratia1.jpg" alt="Vratia – изглед 1">
-          <img src="images/Vratia2.jpg" alt="Vratia – изглед 2">
-          <img src="images/Vratia3.jpg" alt="Vratia – изглед 3">
-        </div>
-        <button class="prev" onclick="moveSlide('vratia', -1)">&#10094;</button>
-        <button class="next" onclick="moveSlide('vratia', 1)">&#10095;</button>
-      </div>
-      <div class="desc">Бяла тениска с врата между светове. Размер М, дамска.</div>
-      <div class="price">
-        <p> <strong> 100% памук </strong></p>
-        <a class="buy-btn"
-           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Vratia&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Vratia.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
-          Купи – 95 лв.
-        </a>
-      </div>
-    </section>
-
-    <!-- Tree of Life -->
-    <section id="tree-shirt">
-      <h2>Тениска "Tree of Life"</h2>
-      <div class="slider">
-        <div class="slides">
-          <img src="images/Treeoflife1.jpg" alt="Tree of Life – изглед 1">
-          <img src="images/Treeoflife2.jpg" alt="Tree of Life – изглед 2">
-          <img src="images/Treeoflife3.jpg" alt="Tree of Life – изглед 3">
-        </div>
-        <button class="prev" onclick="moveSlide('tree', -1)">&#10094;</button>
-        <button class="next" onclick="moveSlide('tree', 1)">&#10095;</button>
-      </div>
-      <div class="desc">Тениска с ръчно рисувано дърво на живота. Размер S, дамска.</div>
-      <div class="price">
-        <p> <strong> 100% памук </strong></p>
-        <a class="buy-btn"
-           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Tree of Life&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Tree%20of%20Life.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
-          Купи – 92 лв.
-        </a>
-      </div>
-    </section>
-
-    <!-- Shield -->
-    <section id="shield-shirt">
-      <h2>Тениска "Shield"</h2>
-      <div class="slider">
-        <div class="slides">
-          <img src="images/Shield1.jpg" alt="Shield – изглед 1">
-          <img src="images/Shield2.jpg" alt="Shield – изглед 2">
-          <img src="images/Shield3.jpg" alt="Shield – изглед 3">
+          <img src="shield.jpeg" class="active">
+          <img src="shield1.jpeg">
         </div>
         <button class="prev" onclick="moveSlide('shield', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('shield', 1)">&#10095;</button>
       </div>
-      <div class="desc">Тениска с ръчно рисуван „Викинг щит”. Размер М, мъжка </div>
-      <div class="price">
-        <p> <strong> 100% памук </strong></p>
-        <a class="buy-btn"
-           href="mailto:pagane.world.of.words@gmail.com?subject=Поръчка Shield&body=Здравейте,%0AИскам%20да%20поръчам%20тениска%20Hekate.%0A%0AРазмер:%20...%0AИме%20и%20фамилия:%20...%0AТелефон:%20...%0AГрад:%20...%0AОфис/Адрес%20Еконт:%20...">
-          Купи – 100 лв.
-        </a>
-      </div>
-    </section>
+      <p class="fabric">100% памук</p>
+      <button class="buy-btn" id="openFormBtn">Купи</button>
+    </div>
 
-    <!-- Запитване -->
-    <button id="contactBtn">?</button>
+
+    <!-- ДАМСКИ -->
+    <h2 class="category-title">Дамски</h2>
+
+    <!-- HEKATE -->
+    <div class="product" id="hekate-shirt">
+      <h3>Hekate</h3>
+      <div class="slider">
+        <div class="slides">
+          <img src="hekate.jpeg" class="active">
+          <img src="hekate1.jpeg">
+        </div>
+        <button class="prev" onclick="moveSlide('hekate', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('hekate', 1)">&#10095;</button>
+      </div>
+      <p class="fabric">100% памук</p>
+      <button class="buy-btn" id="openFormBtn">Купи</button>
+    </div>
+
+    <!-- VRATIA -->
+    <div class="product" id="vratia-shirt">
+      <h3>Vratia</h3>
+      <div class="slider">
+        <div class="slides">
+          <img src="vratia.jpeg" class="active">
+          <img src="vratia1.jpeg">
+        </div>
+        <button class="prev" onclick="moveSlide('vratia', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('vratia', 1)">&#10095;</button>
+      </div>
+      <p class="fabric">100% памук</p>
+      <button class="buy-btn" id="openFormBtn">Купи</button>
+    </div>
+
+    <!-- TREE -->
+    <div class="product" id="tree-shirt">
+      <h3>Tree of Life</h3>
+      <div class="slider">
+        <div class="slides">
+          <img src="tree.jpeg" class="active">
+          <img src="tree1.jpeg">
+        </div>
+        <button class="prev" onclick="moveSlide('tree', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('tree', 1)">&#10095;</button>
+      </div>
+      <p class="fabric">100% памук</p>
+      <button class="buy-btn" id="openFormBtn">Купи</button>
+    </div>
+
   </main>
 
-  <footer>
-    <p>
-      TikTok: <a href="https://www.tiktok.com/@pagane.world" target="_blank">@pagane.world</a><br>
-      Телефон: <a href="tel:+359895020680">+359 895 02 06 80</a><br>
-      Имейл: <a href="mailto:pagane.world.of.words@gmail.com">pagane.world.of.words@gmail.com</a>
-    </p>
-    <p>&copy; 2025 Pagane Painting</p>
 
-    <p>
-      <a href="terms.html">Общи условия</a> | 
-      <a href="privacy.html">Политика за лични данни</a> | 
-      <a href="delivery.html">Условия за доставка</a> | 
-      <a href="archive.html">Архив</a>
-    </p>
+  <!-- POPUP форма -->
+  <div id="modalForm" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Направи запитване</h3>
+      <form>
+        <input type="text" placeholder="Вашето име">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Съобщение"></textarea>
+        <button type="submit">Изпрати</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Pagane Painting</p>
+    <p>Instagram | TikTok | Email</p>
   </footer>
 
-  <!-- Lightbox за увеличаване на снимки -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-  </div> 
-
-  <!-- Скриптове -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Слайдер
-    const sliders = {
-      'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
-      'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-      'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') },
-      'shield': { current: 0, images: document.querySelectorAll('#shield-shirt .slides img') }
-    };
-
-    function show(name, i) {
-      sliders[name].images.forEach((img, idx) =>
-        img.classList.toggle('active', idx === i)
-      );
-    }
-
-    window.moveSlide = function (name, step) {
-      const s = sliders[name];
-      s.current = (s.current + step + s.images.length) % s.images.length;
-      show(name, s.current);
-    };
-
-    for (let key in sliders) show(key, sliders[key].current);
-
-    // Запитване
-    const btn = document.getElementById('contactBtn');
-    const footer = document.querySelector('footer');
-
-    window.addEventListener('scroll', () => {
-      const footerTop = footer.getBoundingClientRect().top;
-      if (footerTop < window.innerHeight) {
-        document.body.classList.add('scrolled-to-footer');
-      } else {
-        document.body.classList.remove('scrolled-to-footer');
-      }
-    });
-
-    btn.addEventListener('click', () => {
-      window.location.href = "mailto:pagane.world.of.words@gmail.com?subject=Запитване&body=Здравейте,%0AИскам%20повече%20информация%20за...";
-    });
-
-    // Lightbox със zoom
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".lightbox .close");
-
-    document.addEventListener("click", (e) => {
-      if (e.target.matches(".slides img")) {
-        lightbox.classList.add("show");
-        lightboxImg.src = e.target.src;
-        lightboxImg.classList.remove("zoomed");
-      }
-    });
-
-    closeBtn.addEventListener("click", () => {
-      lightbox.classList.remove("show");
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) lightbox.classList.remove("show");
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") lightbox.classList.remove("show");
-    });
-
-    lightboxImg.addEventListener("click", () => {
-      lightboxImg.classList.toggle("zoomed");
-    });
-  });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
