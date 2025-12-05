@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   // --- Слайдери ---
   const sliders = {
-    'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
-    'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
-    'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') },
-    'shield': { current: 0, images: document.querySelectorAll('#shield-shirt .slides img') }
-  };
+  'odin': { current: 0, images: document.querySelectorAll('#odin-shirt .slides img') },
+  'hekate': { current: 0, images: document.querySelectorAll('#hekate-shirt .slides img') },
+  'vratia': { current: 0, images: document.querySelectorAll('#vratia-shirt .slides img') },
+  'tree': { current: 0, images: document.querySelectorAll('#tree-shirt .slides img') },
+  'shield': { current: 0, images: document.querySelectorAll('#shield-shirt .slides img') }
+};
 
   function show(name, i) {
     sliders[name].images.forEach((img, idx) =>
