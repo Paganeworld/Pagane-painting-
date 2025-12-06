@@ -107,10 +107,18 @@ header {
 
 /* modal */
 .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:1000; }
-.modal .modal-content { background:#111; padding:18px; width:90%; max-width:420px; border:2px solid color: #FFFFFF; border-radius:8px; color:color: #FFFFFF; }
+.modal .modal-content { 
+    background:#111; 
+    padding:18px; 
+    width:90%; 
+    max-width:420px; 
+    border:2px solid #FFFFFF; /* Коригиран синтаксис */
+    border-radius:8px; 
+    color: #FFFFFF; /* Коригиран синтаксис */
+}
 .modal .close { float:right; font-size:20px; cursor:pointer; }
 
-/* Стил за фиксиран бутон за обаждане */
+/* Стил за фиксиран бутон за обаждане - АКТУАЛИЗИРАН */
 .fixed-call-button {
     /* Фиксиране на позицията спрямо прозореца */
     position: fixed; 
@@ -124,9 +132,9 @@ header {
     width: 40px; 
     height: 40px;
     border-radius: 50%; 
-    background-color: #FFFFFF; 
-    color: black; 
-    font-size: 24px; 
+    background-color: #550055; /* Тъмна маджента */
+    color: #FFFFFF; /* Бяла слушалка/икона */
+    font-size: 20px; /* Намален размер за 40px бутон */
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
     
@@ -135,7 +143,7 @@ header {
 }
 
 .fixed-call-button:hover {
-    background-color: #1FAF59; 
+    background-color: #770077; /* По-светла маджента при hover */
     transform: scale(1.05); 
 }
 
@@ -149,36 +157,36 @@ footer {
   padding: 30px 0;
   margin-top: 40px;
   background: #000;
-  color: color: #FFFFFF;
+  color: #FFFFFF; /* Коригиран синтаксис */
   font-size: 24px;
 }
 
-/* Социални мрежи */
+/* Социални мрежи - АКТУАЛИЗИРАН */
 .footer-socials a {
-  color: color: #FFFFFF; /* тъмна ярка маджента */
+  color: #FFFFFF; /* Бял цвят за линковете */
   font-weight: bold;
   text-decoration: none;
   margin: 0 5px;
 }
 
 .footer-socials a:hover {
-  color: color: #FFFFFF; /* светла маджента */
+  color: #550055; /* Тъмна маджента при hover */
 }
 
-/* Archive / Delivery / Terms */
+/* Archive / Delivery / Terms - АКТУАЛИЗИРАН */
 .footer-links {
   margin-top: 20px;
 }
 
 .footer-links a {
-  color: color: #FFFFFF;
+  color: #FFFFFF; /* Бял цвят за линковете */
   font-weight: bold;
   text-decoration: none;
   margin: 0 5px;
 }
 
 .footer-links a:hover {
-  color: color: #FFFFFF;
+  color: #550055; /* Тъмна маджента при hover */
 }
 
 /* Copyright */
