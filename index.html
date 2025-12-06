@@ -23,14 +23,14 @@
       <h3>Odin</h3>
       <div class="slider">
         <div class="slides">
-          <img src="odin.jpeg" class="active">
-          <img src="odin1.jpeg">
+          <img src="images/Odin.jpg" class="active" alt="Odin 1">
+          <img src="images/Odin1.jpg" alt="Odin 2">
         </div>
         <button class="prev" onclick="moveSlide('odin', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('odin', 1)">&#10095;</button>
       </div>
       <p class="fabric">100% памук</p>
-      <button class="buy-btn" id="openFormBtn">Купи</button>
+      <button class="buy-btn">Купи – 100 лв.</button>
     </div>
 
     <!-- SHIELD -->
@@ -38,16 +38,15 @@
       <h3>Shield</h3>
       <div class="slider">
         <div class="slides">
-          <img src="shield.jpeg" class="active">
-          <img src="shield1.jpeg">
+          <img src="images/Shield.jpg" class="active" alt="Shield 1">
+          <img src="images/Shield1.jpg" alt="Shield 2">
         </div>
         <button class="prev" onclick="moveSlide('shield', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('shield', 1)">&#10095;</button>
       </div>
       <p class="fabric">100% памук</p>
-      <button class="buy-btn" id="openFormBtn">Купи</button>
+      <button class="buy-btn">Купи – 100 лв.</button>
     </div>
-
 
     <!-- ДАМСКИ -->
     <h2 class="category-title">Дамски</h2>
@@ -57,14 +56,15 @@
       <h3>Hekate</h3>
       <div class="slider">
         <div class="slides">
-          <img src="hekate.jpeg" class="active">
-          <img src="hekate1.jpeg">
+          <img src="images/Hekate.jpg" class="active" alt="Hekate 1">
+          <img src="images/Hekate1.jpg" alt="Hekate 2">
+          <img src="images/Hekate2.jpg" alt="Hekate 3">
         </div>
         <button class="prev" onclick="moveSlide('hekate', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('hekate', 1)">&#10095;</button>
       </div>
       <p class="fabric">100% памук</p>
-      <button class="buy-btn" id="openFormBtn">Купи</button>
+      <button class="buy-btn">Купи – 95 лв.</button>
     </div>
 
     <!-- VRATIA -->
@@ -72,14 +72,15 @@
       <h3>Vratia</h3>
       <div class="slider">
         <div class="slides">
-          <img src="vratia.jpeg" class="active">
-          <img src="vratia1.jpeg">
+          <img src="images/Vratia.jpg" class="active" alt="Vratia 1">
+          <img src="images/Vratia1.jpg" alt="Vratia 2">
+          <img src="images/Vratia2.jpg" alt="Vratia 3">
         </div>
         <button class="prev" onclick="moveSlide('vratia', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('vratia', 1)">&#10095;</button>
       </div>
       <p class="fabric">100% памук</p>
-      <button class="buy-btn" id="openFormBtn">Купи</button>
+      <button class="buy-btn">Купи – 95 лв.</button>
     </div>
 
     <!-- TREE -->
@@ -87,28 +88,36 @@
       <h3>Tree of Life</h3>
       <div class="slider">
         <div class="slides">
-          <img src="tree.jpeg" class="active">
-          <img src="tree1.jpeg">
+          <img src="images/Treeoflife.jpg" class="active" alt="Tree 1">
+          <img src="images/Treeoflife1.jpg" alt="Tree 2">
+          <img src="images/Treeoflife2.jpg" alt="Tree 3">
         </div>
         <button class="prev" onclick="moveSlide('tree', -1)">&#10094;</button>
         <button class="next" onclick="moveSlide('tree', 1)">&#10095;</button>
       </div>
       <p class="fabric">100% памук</p>
-      <button class="buy-btn" id="openFormBtn">Купи</button>
+      <button class="buy-btn">Купи – 92 лв.</button>
     </div>
+
+    <!-- (по избор: Viking/други, ако искаш добавям тук) -->
 
   </main>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <span class="lb-close" aria-label="Close">&times;</span>
+    <img id="lb-img" alt="">
+  </div>
 
-  <!-- POPUP форма -->
+  <!-- Modal запитване -->
   <div id="modalForm" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3>Направи запитване</h3>
       <form>
-        <input type="text" placeholder="Вашето име">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Съобщение"></textarea>
+        <input type="text" placeholder="Вашето име" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Съобщение" required></textarea>
         <button type="submit">Изпрати</button>
       </form>
     </div>
