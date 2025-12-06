@@ -107,7 +107,7 @@ header {
 
 /* modal */
 .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:1000; }
-.modal .modal-content { background:#111; padding:18px; width:90%; max-width:420px; border:2px solid #550055; border-radius:8px; color:#ddd; }
+.modal .modal-content { background:#111; padding:18px; width:90%; max-width:420px; border:2px solid color: #FFFFFF; border-radius:8px; color:color: #FFFFFF; }
 .modal .close { float:right; font-size:20px; cursor:pointer; }
 
 /* Footer */
@@ -116,7 +116,7 @@ footer {
   padding: 30px 0;
   margin-top: 40px;
   background: #000;
-  color: #fff;
+  color: color: #FFFFFF;
   font-size: 24px;
 }
 
