@@ -110,6 +110,39 @@ header {
 .modal .modal-content { background:#111; padding:18px; width:90%; max-width:420px; border:2px solid color: #FFFFFF; border-radius:8px; color:color: #FFFFFF; }
 .modal .close { float:right; font-size:20px; cursor:pointer; }
 
+/* Стил за фиксиран бутон за обаждане */
+.fixed-call-button {
+    /* Фиксиране на позицията спрямо прозореца */
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    
+    /* Стилизиране на бутона */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    background-color: #25D366; 
+    color: white; 
+    font-size: 24px; 
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+    
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; 
+}
+
+.fixed-call-button:hover {
+    background-color: #1FAF59; 
+    transform: scale(1.05); 
+}
+
+.fixed-call-button:active {
+    transform: scale(0.95); 
+}
+
 /* Footer */
 footer {
   text-align: center;
