@@ -1,90 +1,114 @@
+/* Основни */
 body {
   background: #000;
   color: #fff;
   font-family: Arial, sans-serif;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
   text-align: center;
-  padding: 40px 0;
+  padding: 32px 16px;
 }
 
 .category-title {
-  font-size: 28px;
-  margin: 40px 0 20px;
-  border-bottom: 2px solid #550055;
-  padding-bottom: 5px;
+  font-size: 26px;
+  margin: 28px 16px 12px;
+  border-bottom: 2px solid #550055; /* тъмна маджента */
+  padding-bottom: 8px;
 }
 
+/* продукт карта */
 .product {
-  margin: 40px auto;
+  margin: 28px auto;
   text-align: center;
-  width: 90%;
-  max-width: 450px;
+  width: 92%;
+  max-width: 520px;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .slider {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  background: #111;
 }
 
-.slider img {
+.slides img {
   width: 100%;
   display: none;
   cursor: zoom-in;
 }
 
-.slider img.active {
+.slides img.active {
   display: block;
 }
 
 .prev, .next {
   position: absolute;
   top: 50%;
-  font-size: 28px;
-  background: transparent;
+  transform: translateY(-50%);
+  font-size: 26px;
+  background: rgba(0,0,0,0.4);
   border: none;
   color: #fff;
-  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .prev { left: 10px; }
 .next { right: 10px; }
 
 .buy-btn {
-  margin-top: 10px;
-  padding: 10px 20px;
+  margin-top: 12px;
+  padding: 10px 18px;
   background: #550055;
   color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .fabric {
   font-size: 14px;
-  margin-bottom: 10px;
+  margin: 8px 0;
+  color: #ddd;
 }
 
-/* Modal */
-.modal {
+/* Lightbox */
+.lightbox {
   display: none;
   position: fixed;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 
-.modal-content {
-  background: #111;
-  margin: 10% auto;
-  padding: 20px;
-  width: 80%; max-width: 400px;
-  border: 2px solid #550055;
+.lightbox.show {
+  display: flex;
 }
 
-.close {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
+.lightbox img {
+  max-width: 92%;
+  max-height: 88%;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform .25s ease;
 }
+
+.lightbox img.zoomed {
+  transform: scale(1.8);
+}
+
+/* modal */
+.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:1000; }
+.modal .modal-content { background:#111; padding:18px; width:90%; max-width:420px; border:2px solid #550055; border-radius:8px; color:#ddd; }
+.modal .close { float:right; font-size:20px; cursor:pointer; }
+
+/* Footer */
+footer { text-align:center; padding:18px 12px; color:#cfcfcf; font-size:14px; }
